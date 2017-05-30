@@ -1,0 +1,102 @@
+<div class="panel panel-primary">
+	<div class="panel-heading">{{pageTitle}}</div>
+	<div class="panel-body">
+		<div class="row">
+			<div class="col-lg-2">Filter by:</div>
+			<div class="col-lg-4">
+				<input type="text" (keyup)='filterName(listFilter)' [(ngModel)]='listFilter' />
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-lg-6">Filtered by: {{listFilter}}</div>
+		</div>
+		<div class="col-lg-12 table-responsive">
+			<!--<table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>
+                            <button class="btn btn-primary" (click)='toggleImg()'>
+                                {{showImg ? 'hide': 'show'}} image
+                            </button>
+                        </th>
+                        <th>Product</th>
+                        <th>code</th>
+                        <th>Available</th>
+                        <th>Price</th>
+                        <th>Rating</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor='let product of products | productFilter : listFilter'>
+                        <td>
+                            <img *ngIf='showImg'
+                            [src]='product.imageUrl' 
+                            [title]='product.productName'
+                            [style.width.px]='imgWidth'
+                            [style.margin.px]='imgMargin'
+                            >
+                        </td>
+                        <td>{{ product.productName }}</td>
+                        <td>{{ product.productCode | lowercase }}</td>
+                        <td>{{ product.releaseDate | date:"MM/dd/yy" }}</td>
+                        <td>{{ product.price | currency: 'USD':true:'1.2-2' }}</td>
+                        <td>
+                            <stars [rating]='product.starRating' (ratingClicked)='onRatingClicked($event)'>
+                            </stars>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>-->
+		</div>
+		<div class="row">
+			<div class="col-sm-6 col-md-4" *ngFor='let product of products '>
+				<div class="thumbnail">
+
+					<div class="caption">
+						<h3>{{ product.productName }}</h3>
+						<p>{{ product.productCode | lowercase }}</p>
+						<p>{{ product.releaseDate | date:"MM/dd/yy" }}</p>
+						<p>{{ product.price | currency: 'USD':true:'1.2-2' }}</p>
+
+						<div class="stars-content">
+							<stars [rating]='product.starRating' (ratingClicked)='onRatingClicked($event)'></stars>
+						</div>
+
+						<p>
+							<button class="btn btn-primary" (click)='toggleImg(product)' data-toggle="modal" data-target="#myModal">
+                                View Image
+                            </button>
+						</p>
+
+						<!-- Modal -->
+
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-12">
+			<ul>
+
+			</ul>
+		</div>
+	</div>
+	<div class="panel-footer">
+		<button class="btn btn-primary btn-custom" (click)="getCount()">Get Count</button> <label *ngIf='count'> {{count}}</label>
+	</div>
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 *ngIf="productDetail" class="modal-title" id="myModalLabel">{{ productDetail.productName }}</h4>
+				</div>
+				<div class="modal-body" *ngIf="productDetail" >
+					<img [src]='productDetail.imageUrl' [title]='productDetail.productName' [style.width.px]='imgWidth' [style.margin.px]='imgMargin'>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

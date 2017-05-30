@@ -1,0 +1,63 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+body {
+  font: "Roboto", sans-serif !important;
+  color: #216192; }
+
+.panel.panel-primary {
+  border-color: #216192; }
+
+.panel.panel-primary > .panel-heading {
+  background-color: #216192;
+  border-color: #216192; }
+
+.table-responsive .btn-primary {
+  background-color: #216192;
+  border-color: #216192; }
+
+.table-responsive table th {
+  color: #216192; }
+
+.footer-list li {
+  display: inline-block;
+  padding: 10px; }
+
+footer {
+  width: 100%; }
+
+footer a {
+  color: #fff; }
+
+.pos-absolute {
+  position: absolute;
+  bottom: 0; }
+
+.welcome-container {
+  color: #fff;
+  padding-top: 5%; }
+
+.welcome-container .jumbotron {
+  background-color: transparent;
+  padding: 0; }
+
+.navbar.navbar-default {
+  background-color: #224876;
+  border-color: #224876; }
+
+.navbar.navbar-default .navbar-brand {
+  color: #fff; }
+
+.navbar-default .navbar-nav > li > a:focus, .navbar-default .navbar-nav > li > a:hover {
+  color: #ccc; }
+
+.navbar.navbar-default .navbar-nav > li > a {
+  color: #fff; }
+
+.navbar.navbar-default .navbar-nav > li.active > a {
+  color: #333; }
+
+.content-container {
+  background-color: rgba(107, 140, 183, 0.51);
+  padding: 30px 15px;
+  display: inline-block; }
+
+/*# sourceMappingURL=style.css.map */

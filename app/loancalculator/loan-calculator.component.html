@@ -1,0 +1,50 @@
+<div class="panel panel-primary" *ngIf = 'false'>
+	<form #userRegistrationForm="ngForm"  class="reg-form">
+		<div class="panel-heading">{{myloan}}</div>
+		<div class="panel-body">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="form-group">
+						<label class="col-lg-3">Enter Loan Amount :</label>
+						<div class="col-lg-4">
+							<input type="text" class="form-control loan-amt" id="amount" name="amount" [(ngModel)]="calculateEMI.amount" required/>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="form-group">
+						<label class="col-lg-3">Enter Rate of Interest :</label>
+						<div class="col-lg-4">
+							<input type="text" class="form-control loan-int" id="interest" name="interest" autofocus [(ngModel)]="calculateEMI.interest" required/>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="form-group">
+						<label class="col-lg-3">Loan Tenure :</label>
+						<div class="col-lg-4">
+							<input type="text" class="form-control loan-span" id="duration" name="duration" autofocus [(ngModel)]="calculateEMI.duration" required/>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row" *ngIf="emi !== NULL">
+				<div class="col-lg-12">
+					<div class="form-group">
+						<label class="col-lg-3">Your EMI is :</label>
+						<div class="col-lg-4">
+							<label class="control" >{{emi}}</label>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="panel-footer">
+			<button class="btn btn-primary btn-custom btn-calculate" (click)='showVal()'>Calculate EMI</button>
+		</div>
+	</form>
+</div>

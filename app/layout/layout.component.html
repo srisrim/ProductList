@@ -1,0 +1,45 @@
+<nav class="navbar navbar-default navbar-static-top">
+	<div class="container">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+				aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+			<a class="navbar-brand" routerLink="/" routerLinkActive="active">LOGO</a>
+		</div>
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            
+			<ul class="nav navbar-nav navbar-right">
+				<li><a routerLink="/products" routerLinkActive="active">Products</a></li>
+				<li class="active"><a routerLink="/Login" routerLinkActive="active">Login</a></li>
+			</ul>
+		</div>
+		<!-- /.navbar-collapse -->
+	</div>
+</nav>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12 content-container">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+	<!--<h1>{{pageTitle}}</h1>
+	<pm-products></pm-products>
+	<my-loan></my-loan>-->
+</div>
+<footer class="footer pos-absolute">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12">
+				<ul class="footer-list">
+					<li><a routerLink="/" routerLinkActive="active">Home</a></li>
+                    <li><a routerLink="/products" routerLinkActive="active">Products</a></li>
+                    <li ><a routerLink="/Login" routerLinkActive="active">Login</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</footer>
